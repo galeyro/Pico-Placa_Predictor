@@ -12,10 +12,18 @@ public class Main {
         LocalTime inputTime = setTime(get_inputTime());
 
         DateTime dateTime = new DateTime(inputDate, inputTime);
+
+        System.out.println("\nThe input values are: ");
+        System.out.print("License plate: ");
         System.out.println(car.getLicensePlate());
+        System.out.print("Date: ");
         System.out.println(dateTime.getDate());
+        System.out.print("Time: ");
         System.out.println(dateTime.getTime());
 
+        int lastDigit = car.getLastDigit();
+        System.out.print("The last digit of the license plate is: ");
+        System.out.println(lastDigit);
     }
 
     private static String get_inputLicensePlate() {

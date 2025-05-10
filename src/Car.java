@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import static java.lang.Integer.parseInt;
+
 public class Car {
     private String licensePlate;
 
@@ -14,4 +16,10 @@ public class Car {
     public void setLicensePlate(String licensePlate) {
         this.licensePlate = licensePlate;
     }
+
+    public int getLastDigit(){
+        return parseInt(String.valueOf(licensePlate.charAt(licensePlate.length()-1)));
+    }
+
+
 }
