@@ -7,10 +7,11 @@ public class Car {
         this.licensePlate = licensePlate;
     }
 
-    public String get_inputLicensePlate(){
-        Scanner scanner = new Scanner(System.in);
+    public String getLicensePlate() {
+        return licensePlate;
+    }
 
-        System.out.print("Enter the license plate: ");
-        return scanner.nextLine();
+    public void setLicensePlate(String licensePlate) {
+        this.licensePlate = licensePlate;
     }
 }

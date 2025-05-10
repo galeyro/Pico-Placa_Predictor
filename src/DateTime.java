@@ -1,6 +1,7 @@
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Scanner;
+
+import static java.lang.Integer.parseInt;
 
 public class DateTime {
     private LocalDate date;
@@ -11,17 +12,19 @@ public class DateTime {
         this.time=time;
     }
 
-    public String get_inputDate(){
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Enter the license plate: ");
-        return scanner.nextLine();
+    public LocalDate getDate() {
+        return date;
     }
 
-    public String get_inputTime(){
-        Scanner scanner = new Scanner(System.in);
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
 
-        System.out.print("Enter the license plate: ");
-        return scanner.nextLine();
+    public LocalTime getTime() {
+        return time;
+    }
+
+    public void setTime(LocalTime time) {
+        this.time = time;
     }
 }
