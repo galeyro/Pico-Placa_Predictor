@@ -40,6 +40,14 @@ public class Main {
             System.out.println("Free");
         }
 
+        boolean isRestrictionHour = false;
+
+        isRestrictionHour = restriction.isTimeRest(dateTime.getDate(),dateTime.getTime());
+        if (isRestrictionHour){
+            System.out.println("YOU DO NOT GO OUT");
+        } else {
+            System.out.println("FREE");
+        }
     }
 
     private static String get_inputLicensePlate() {
