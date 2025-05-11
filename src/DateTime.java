@@ -27,4 +27,8 @@ public class DateTime {
     public void setTime(LocalTime time) {
         this.time = time;
     }
+
+    public void getDay(){
+        System.out.print(date.getDayOfWeek());
+    }
 }

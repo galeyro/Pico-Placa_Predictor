@@ -2,7 +2,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 abstract class Restriction {
-    private String[] daysRestriction = {"Mon","Tue","Wed","Thu","Fri"};
+    private String[] daysRestriction = {"MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY"};
     //"Rest" refers to "Restriction"
     private LocalTime iniMorRest;
     private LocalTime endMorRest;

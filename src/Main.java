@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Scanner;
@@ -24,6 +25,10 @@ public class Main {
         int lastDigit = car.getLastDigit();
         System.out.print("The last digit of the license plate is: ");
         System.out.println(lastDigit);
+
+        System.out.println("The day is: ");
+        dateTime.getDay();
+
     }
 
     private static String get_inputLicensePlate() {
