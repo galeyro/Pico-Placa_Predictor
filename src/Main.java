@@ -14,6 +14,8 @@ public class Main {
 
         DateTime dateTime = new DateTime(inputDate, inputTime);
 
+        Restriction restriction = new Restriction();
+
         System.out.println("\nThe input values are: ");
         System.out.print("License plate: ");
         System.out.println(car.getLicensePlate());
@@ -28,6 +30,15 @@ public class Main {
 
         System.out.println("The day is: ");
         dateTime.getDay();
+
+        System.out.println("\nIs a restriction day?");
+        boolean isRestrictionDay = false;
+        isRestrictionDay = restriction.isDayRest(dateTime.getDate());
+        if (isRestrictionDay){
+            System.out.println("Is restriction day!!!");
+        } else {
+            System.out.println("Free");
+        }
 
     }
 

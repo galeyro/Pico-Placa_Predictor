@@ -1,8 +1,8 @@
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-abstract class Restriction {
-    private String[] daysRestriction = {"MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY"};
+public class Restriction {
+    private final String[] daysRestriction = {"MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY"};
     //"Rest" refers to "Restriction"
     private LocalTime iniMorRest;
     private LocalTime endMorRest;
@@ -11,6 +11,14 @@ abstract class Restriction {
 
     public boolean isDayRest(LocalDate date){
         //Function to evaluate if is a day when pico y placa applies
+        String temp_day = date.getDayOfWeek().toString();
+
+        for (String temp : daysRestriction){
+            if (temp_day.equalsIgnoreCase(temp)){
+                return true;
+            }
+        }
+
         return false;
     }
 
