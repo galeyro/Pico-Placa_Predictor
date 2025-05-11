@@ -33,7 +33,7 @@ public class Main {
 
         System.out.println("\nIs a restriction day?");
         boolean isRestrictionDay = false;
-        isRestrictionDay = restriction.isDayRest(dateTime.getDate());
+        isRestrictionDay = restriction.isDayRest(dateTime.getDate(), car.getLastDigit());
         if (isRestrictionDay){
             System.out.println("Is restriction day!!!");
         } else {
@@ -42,7 +42,7 @@ public class Main {
 
         boolean isRestrictionHour = false;
 
-        isRestrictionHour = restriction.isTimeRest(dateTime.getDate(),dateTime.getTime());
+        isRestrictionHour = restriction.isTimeRest(dateTime.getDate(),dateTime.getTime(), car.getLastDigit());
         if (isRestrictionHour){
             System.out.println("YOU DO NOT GO OUT");
         } else {
