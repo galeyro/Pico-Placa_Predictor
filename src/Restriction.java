@@ -1,8 +1,8 @@
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 public class Restriction {
+    //Attributes--------------------------------
     private final String[] daysRestriction = {"MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY"};
     //"Rest" refers to "Restriction"
 
@@ -14,8 +14,10 @@ public class Restriction {
     LocalTime iniPMRest = LocalTime.of(16,0);
     LocalTime endPMRest = LocalTime.of(19,30);
 
+    //Methods-----------------------------------
+
+    //Function to evaluate if is a day when pico y placa applies relating the last digit of license plate
     public boolean isDayRest(LocalDate date, int lastDigit){
-        //Function to evaluate if is a day when pico y placa applies
         String temp_day = date.getDayOfWeek().toString();
         for (String temp : daysRestriction){
             if (temp_day.equalsIgnoreCase(temp)){
@@ -62,15 +64,15 @@ public class Restriction {
                         }
                     default:
                         return false;
-
                 }
             }
         }
         return false;
     }
 
+    //Function to evaluate if a licensePlate is within an hour of restriction
     public boolean isTimeRest(LocalDate date, LocalTime time, int lastDigit){
-        //Function to evaluate if a licensePlate is within an hour of restriction
+
         boolean isRestrictionDay = false;
         isRestrictionDay = isDayRest(date, lastDigit);
 
@@ -82,5 +84,4 @@ public class Restriction {
 
         return isRestrictionDay;
     }
-
 }

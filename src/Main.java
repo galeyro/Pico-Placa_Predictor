@@ -1,5 +1,3 @@
-import java.sql.SQLOutput;
-import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Scanner;
@@ -8,70 +6,52 @@ import static java.lang.Integer.parseInt;
 
 public class Main {
     public static void main(String[] args) {
-        //User enter licenseplate and create a new car
+
+        //Enter license plate and create new Car
         String inputLicensePlate = get_inputLicensePlate();
         Car car = new Car(inputLicensePlate);
 
+        //Enter date and time and create new DateTime
         LocalDate inputDate = setDate(get_inputDate());
         LocalTime inputTime = setTime(get_inputTime());
-
         DateTime dateTime = new DateTime(inputDate, inputTime);
 
+        //Instance Restriction to get access to functions
         Restriction restriction = new Restriction();
 
+        //Include last digit of license plate in scope of main
+        int lastDigit = car.getLastDigit();
 
-        int lastDigit = -1;
-        try {
-            lastDigit = car.getLastDigit();
-        } catch (Exception e) {
-            System.out.println("Use the format for LICENSE PLATE please ([characters]-[numbers])");
-        }
+        //Show the result of the predictor in console
+        boolean isRestrictionHour = restriction.isTimeRest(dateTime.date(), dateTime.time(), car.getLastDigit());
 
-        System.out.print("The last digit of the license plate is: ");
-        System.out.println(lastDigit);
-
-        System.out.println("The day is: ");
-        dateTime.getDay();
-
-        System.out.println("\nIs a restriction day?");
-        boolean isRestrictionDay = false;
-        isRestrictionDay = restriction.isDayRest(dateTime.getDate(), car.getLastDigit());
-        if (isRestrictionDay) {
-            System.out.println("Is restriction day!!!");
-        } else {
-            System.out.println("Free");
-        }
-
-        boolean isRestrictionHour = false;
-
-        isRestrictionHour = restriction.isTimeRest(dateTime.getDate(), dateTime.getTime(), car.getLastDigit());
         if (isRestrictionHour) {
-            System.out.println("YOU DO NOT GO OUT");
+            System.out.println("\nPICO & PLACA IS APPLYING =(");
         } else {
-            System.out.println("FREE");
+            System.out.println("\nYOU ARE FREE OF RESTRICTION =D");
         }
     }
 
+    //Methods-----------
+
+    //User input functions
     private static String get_inputLicensePlate() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the license plate ([characters]-[numbers]): ");
         return scanner.nextLine();
     }
-
     private static String get_inputDate(){
-
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the date (dd/MM/yyyy): ");
-
         return scanner.nextLine();
     }
-
     private static String get_inputTime(){
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the time in 24h format (hh:mm): ");
         return scanner.nextLine();
     }
 
+    //Setters for DateTime attributes
     private static LocalDate setDate(String inputDate) {
         int year = 0;
         int month = 0;
