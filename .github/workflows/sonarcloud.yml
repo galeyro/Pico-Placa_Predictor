@@ -24,7 +24,7 @@ jobs:
         run: |
           mkdir out
           dir src /s /b | findstr /r "\.java$" > sources.txt
-          javac -d out @sources.txt
+          javac -d out $(Get-Content sources.txt)
           
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v5
