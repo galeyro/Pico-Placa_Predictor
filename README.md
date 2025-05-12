@@ -23,15 +23,23 @@ The project consider:
 The project is done in Java, using OOP paradigm to solve it with few classes and interacting with the console.
 It could be improved to use a GUI in the future, maybe with Java Swing.
 
+## Inputs
+-License playe (e.g., ABC-123)
+-Date as a String (e.g., 01/01/2025)
+-Time (e.g., 07:28)
+
 ## Results
 In restriction time
+
 ![image](https://github.com/user-attachments/assets/4a6612d3-df8f-4eba-b0b3-4c3648c34d49)
 
 Out of restriction time
+
 ![image](https://github.com/user-attachments/assets/4b0ac84b-afc2-4c70-b9e4-16b669be6c45)
 
 ## Test
 Static testing has been done using SonarCloud
+
 ![image](https://github.com/user-attachments/assets/7d4100ea-21a6-4baa-a9e9-c9e08d58d781)
 
 
