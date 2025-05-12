@@ -8,7 +8,9 @@ import static java.lang.Integer.parseInt;
 
 public class Main {
     public static void main(String[] args) {
-        Car car = new Car(get_inputLicensePlate());
+        //User enter licenseplate and create a new car
+        String inputLicensePlate = get_inputLicensePlate();
+        Car car = new Car(inputLicensePlate);
 
         LocalDate inputDate = setDate(get_inputDate());
         LocalTime inputTime = setTime(get_inputTime());
@@ -17,13 +19,6 @@ public class Main {
 
         Restriction restriction = new Restriction();
 
-        System.out.println("\nThe input values are: ");
-        System.out.print("License plate: ");
-        System.out.println(car.getLicensePlate());
-        System.out.print("Date: ");
-        System.out.println(dateTime.getDate());
-        System.out.print("Time: ");
-        System.out.println(dateTime.getTime());
 
         int lastDigit = -1;
         try {

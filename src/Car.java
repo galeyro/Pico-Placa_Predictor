@@ -18,6 +18,8 @@ public class Car {
     }
 
     public int getLastDigit(){
+        //Pending
+        //Fix error when the last digit is not a number
         return parseInt(String.valueOf(licensePlate.charAt(licensePlate.length()-1)));
     }
 
