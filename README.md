@@ -8,25 +8,26 @@ If a car is on the road during the specific lapse of time, the owner will get a 
 The restriction apply depending the day.
 
 ## Days of restriction
-1,2: Monday
-3,4: Tuesday
-5,6: Wednesday
-7,8: Thursday
-9,0: Friday
+- 1, 2 → Monday  
+- 3, 4 → Tuesday  
+- 5, 6 → Wednesday  
+- 7, 8 → Thursday  
+- 9, 0 → Friday
 
 ## Hours of restriction
-The project consider:
--7:00am to 9:30am
--4:00pm to 7:30pm
+The project consider two time slots:
+
+- 7:00 a.m. to 9:30 a.m.  
+- 4:00 p.m. to 7:30 p.m.
 
 ## Context
 The project is done in Java, using OOP paradigm to solve it with few classes and interacting with the console.
 It could be improved to use a GUI in the future, maybe with Java Swing.
 
 ## Inputs
--License playe (e.g., ABC-123)
--Date as a String (e.g., 01/01/2025)
--Time (e.g., 07:28)
+- License plate (e.g., `ABC-123`)  
+- Date as a string (e.g., `01/01/2025`)  
+- Time (e.g., `07:28`)
 
 ## Results
 In restriction time
